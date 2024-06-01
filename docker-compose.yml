@@ -1,0 +1,20 @@
+version: "3"
+services:
+  napcat:
+    environment:
+        - ACCOUNT=3255714049
+        - WS_ENABLE=true
+    ports:
+        - 3001:3001
+        - 6099:6099
+    container_name: napcat
+    network_mode: bridge
+    restart: always
+    image: mlikiowa/napcat-docker:latest
+    volumes:
+      - nc-data:/root/.config/QQ
+      - nc-config:/usr/src/app/napcat/config
+
+volumes:
+  nc-data:
+  nc-config:
